@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOW CALL 사장님 소개자료</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 32px 16px;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+  }
+
+  /* TOP HEADER */
+  .header {
+    background: #111;
+    padding: 36px 52px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: #FF4F1F;
+    opacity: 0.15;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; right: 120px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: #FF4F1F;
+    opacity: 0.08;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #FF4F1F;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 5px 12px;
+    border-radius: 2px;
+    margin-bottom: 14px;
+  }
+
+  .brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    color: #fff;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .brand span {
+    color: #FF4F1F;
+  }
+
+  .tagline {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
+  /* MAIN CONTENT */
+  .content {
+    padding: 44px 52px;
+  }
+
+  /* PROBLEM SECTION */
+  .problem {
+    background: #FFF5F2;
+    border-left: 4px solid #FF4F1F;
+    padding: 22px 26px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 40px;
+  }
+  .problem-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #FF4F1F;
+    margin-bottom: 10px;
+  }
+  .problem-text {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.8;
+  }
+  .problem-text strong {
+    color: #111;
+    font-weight: 700;
+  }
+
+  /* HOW IT WORKS */
+  .section-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #999;
+    margin-bottom: 20px;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .step-card {
+    background: #111;
+    border-radius: 10px;
+    padding: 22px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .step-card::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; right: -20px;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: #FF4F1F;
+    opacity: 0.07;
+  }
+
+  .step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    color: #FF4F1F;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .step-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .step-desc {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  /* BENEFITS */
+  .benefits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+
+  .benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 20px;
+    border: 1.5px solid #F0F0F0;
+    border-radius: 10px;
+    background: #FAFAFA;
+  }
+
+  .benefit-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .benefit-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 4px;
+  }
+
+  .benefit-desc {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.6;
+  }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1.5px solid #F0F0F0;
+    margin: 0 0 36px;
+  }
+
+  /* COMPARISON */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .compare-box {
+    border-radius: 10px;
+    padding: 20px 22px;
+  }
+
+  .compare-box.before {
+    background: #F8F8F8;
+    border: 1.5px solid #E8E8E8;
+  }
+
+  .compare-box.after {
+    background: #111;
+    border: 1.5px solid #111;
+  }
+
+  .compare-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 14px;
+  }
+
+  .compare-box.before .compare-label { color: #999; }
+  .compare-box.after .compare-label { color: #FF4F1F; }
+
+  .compare-item {
+    font-size: 13px;
+    line-height: 1;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .compare-box.before .compare-item { color: #888; }
+  .compare-box.after .compare-item { color: #fff; }
+
+  .compare-item .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .compare-box.before .dot { background: #ccc; }
+  .compare-box.after .dot { background: #FF4F1F; }
+
+  /* CTA FOOTER */
+  .cta {
+    background: #FF4F1F;
+    border-radius: 12px;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .cta-left {}
+
+  .cta-title {
+    font-size: 18px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  .cta-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .cta-right {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .cta-link {
+    display: inline-block;
+    background: #fff;
+    color: #FF4F1F;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 12px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+
+  .cta-contact {
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    margin-top: 8px;
+  }
+
+  /* BOTTOM BAR */
+  .bottom-bar {
+    background: #111;
+    padding: 14px 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .bottom-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: #fff;
+    letter-spacing: 0.06em;
+  }
+
+  .bottom-brand span { color: #FF4F1F; }
+
+  .bottom-note {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .page { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="badge">BUSAN BETA · 2026</div>
+    <div class="brand">NOW <span>CALL</span></div>
+    <div class="tagline">대타 알바, 이제 5분 안에 구하세요</div>
+  </div>
+
+  <div class="content">
+
+    <div class="problem">
+      <div class="problem-label">PROBLEM</div>
+      <div class="problem-text">
+        알바가 갑자기 못 나온다는 연락, 받아보신 적 있으시죠?<br>
+        알바몬·알바천국에 올려도 <strong>지원→확인→연락</strong>까지 몇 시간,<br>
+        그 사이 가게는 이미 혼자 감당해야 합니다.
+      </div>
+    </div>
+
+    <div class="section-title">HOW IT WORKS</div>
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-title">공고 등록</div>
+        <div class="step-desc">시급·시간·위치만 입력하면 30초 만에 완료</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-title">즉시 알림 발송</div>
+        <div class="step-desc">반경 내 구직자에게 실시간 푸시알림 자동 전송</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-title">매칭 완료</div>
+        <div class="step-desc">수락한 알바생 정보 바로 확인, 바로 연락</div>
+      </div>
+    </div>
+
+    <div class="section-title">WHY NOW CALL</div>
+    <div class="benefits">
+      <div class="benefit-item">
+        <div class="benefit-icon">⚡</div>
+        <div>
+          <div class="benefit-title">평균 매칭 시간 단축</div>
+          <div class="benefit-desc">기존 수 시간 → 목표 30분 이내.<br>급할수록 빠릅니다.</div>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">⭐</div>
+        <div>
+          <div class="benefit-title">평점제로 검증된 알바생</div>
+          <div class="benefit-desc">근무 후 상호 평가로 신뢰도 확인.<br>노쇼 알바생은 자동 제한.</div>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">📍</div>
+        <div>
+          <div class="benefit-title">위치 기반 매칭</div>
+          <div class="benefit-desc">가게 근처에 있는 구직자에게만<br>알림이 발송됩니다.</div>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">💸</div>
+        <div>
+          <div class="benefit-title">베타 기간 수수료 무료</div>
+          <div class="benefit-desc">지금 참여하시면 베타 기간 동안<br>모든 기능 무료 제공.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">BEFORE & AFTER</div>
+    <div class="compare">
+      <div class="compare-box before">
+        <div class="compare-label">기존 방식</div>
+        <div class="compare-item"><span class="dot"></span>알바몬/천국 공고 작성 (15분+)</div>
+        <div class="compare-item"><span class="dot"></span>지원자 기다리기 (수 시간)</div>
+        <div class="compare-item"><span class="dot"></span>일일이 확인 후 연락</div>
+        <div class="compare-item"><span class="dot"></span>노쇼 당해도 방법 없음</div>
+      </div>
+      <div class="compare-box after">
+        <div class="compare-label">NOW CALL</div>
+        <div class="compare-item"><span class="dot"></span>공고 등록 30초</div>
+        <div class="compare-item"><span class="dot"></span>근처 알바생에게 즉시 알림</div>
+        <div class="compare-item"><span class="dot"></span>수락 즉시 연락처 공유</div>
+        <div class="compare-item"><span class="dot"></span>평점제 + 노쇼 패널티 운영</div>
+      </div>
+    </div>
+
+    <div class="cta">
+      <div class="cta-left">
+        <div class="cta-title">지금 바로 가게 등록하기</div>
+        <div class="cta-sub">베타 참여 가게는 정식 출시 후에도 수수료 우대 혜택 제공</div>
+      </div>
+      <div class="cta-right">
+        <a class="cta-link" href="https://forms.gle/qNz4v8EBHoJAi65R7">신청 폼 바로가기 →</a>
+        <div class="cta-contact">문의: 카카오톡 오픈채팅 NOW CALL</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bottom-bar">
+    <div class="bottom-brand">NOW <span>CALL</span></div>
+    <div class="bottom-note">부산 지역 베타 서비스 운영 중 · 2026</div>
+  </div>
+
+</div>
+</body>
+</html>
